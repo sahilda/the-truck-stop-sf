@@ -11,4 +11,4 @@ A simple app that responds to a HipChat channel with today's menu for the Truck 
 
 #### Run the app by:
 1. Setting up environment.rb - look at environment.rb.sample for an example.
-2. Running the following: nohup ruby webServer.rb &> /dev/null &
+2. Running the following: ```nohup ruby webServer.rb &> /dev/null &```
