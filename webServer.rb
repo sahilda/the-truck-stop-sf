@@ -7,8 +7,8 @@ require './dataPull'
 server = TCPServer.new 50001
 
 def build_chat_response
-	dataPreparor = DataPreparor.new
-	message = dataPreparor.get_trucks
+	dataPull = DataPull.new
+	message = dataPull.get_truck
 
 	response = {}
 	response["color"] = "green"

@@ -1,5 +1,4 @@
 require './dataPull'
 
-d = DataPreparor.new
-message = d.get_trucks
-puts message
+d = DataPull.new
+p d.get_truck
