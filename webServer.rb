@@ -2,7 +2,7 @@ require 'socket'
 require 'json'
 require 'net/http'
 require 'openssl'
-require_relative 'dataPull'
+require './dataPull.rb'
 
 server = TCPServer.new 50001
 

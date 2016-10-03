@@ -1,5 +1,5 @@
 require 'oauth'
-require_relative 'environment'
+require './environment.rb'
 
 class TwitterConnector
 	def initialize(screen_name)
