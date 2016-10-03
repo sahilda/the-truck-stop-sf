@@ -2,7 +2,7 @@ require 'socket'
 require 'json'
 require 'net/http'
 require 'openssl'
-require './dataPull'
+require_relative 'dataPull'
 
 server = TCPServer.new 50001
 
@@ -58,7 +58,12 @@ loop do
   	STDERR.puts headers
 
 	client_data = client.read(headers["Content-Length"].to_i)
-	post_message_to_hipchat(client_data)
+
+	begin
+		post_message_to_hipchat(client_data)
+	rescue
+		STDERR.puts "Not a valid request."
+	end
 
 	client.close
 end

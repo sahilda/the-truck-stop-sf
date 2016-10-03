@@ -1,4 +1,4 @@
-require './dataPull'
+require_relative 'dataPull'
 
 d = DataPull.new
 twitter_data = d.get_twitter_data

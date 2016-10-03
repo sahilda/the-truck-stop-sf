@@ -1,7 +1,7 @@
 require 'nokogiri'
 require 'rest_client'
 require 'json'
-require './twitterConnector'
+require_relative 'twitterConnector'
 
 class DataPull
 	def initialize
