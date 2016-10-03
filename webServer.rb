@@ -49,22 +49,20 @@ end
 
 loop do 
 	client = server.accept
-
-  	headers = {}
-  	while line = client.gets.split(" ", 2)
-    	break if line[0] == ""
-    	headers[line[0].chop] = line[1].strip
-  	end
-
-  	STDERR.puts headers
-
-	client_data = client.read(headers["Content-Length"].to_i)
-
 	begin
+	  	headers = {}
+	  	while line = client.gets.split(" ", 2)
+	    	break if line[0] == ""
+	    	headers[line[0].chop] = line[1].strip
+	  	end
+
+  		STDERR.puts headers
+
+		client_data = client.read(headers["Content-Length"].to_i)
+
 		post_message_to_hipchat(client_data)
 	rescue
 		STDERR.puts "Not a valid request."
 	end
-
 	client.close
 end
