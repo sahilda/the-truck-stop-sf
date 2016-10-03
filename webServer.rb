@@ -4,7 +4,8 @@ require 'net/http'
 require 'openssl'
 require './dataPull.rb'
 
-server = TCPServer.new 50001
+port = ENV["PORT"] || 50001
+server = TCPServer.new port
 
 def build_chat_response
 	dataPull = DataPull.new
