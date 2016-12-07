@@ -28,7 +28,7 @@ class DataPull
 			data = "No trucks today. It's the weekend, go outside."
 		else
 			data = fb_data.to_html.split("<p>").select { | data | data.include?(date.strftime("%m/%d")) }[0]
-			data = "There's no published data about Trucks on fb yet..ugh this sucks." if data == nil
+			data = "Too lazy to get the info but it's really not that hard: https://lmgtfy.com/?q=Truck+Stop+SF." if data == nil
 
 			data.gsub!("</p>","")
 			data.gsub!("<br> ","\n")
