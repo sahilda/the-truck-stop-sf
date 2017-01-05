@@ -18,7 +18,7 @@ class DataPull
 	end
 
 	def get_fb_data(fb_html)
-		return fb_html.css("p")
+		return fb_html.css('code').children[0].to_xhtml.match(/<p>.*<\/p>/).to_s
 	end
 
 	def parse_fb_data(fb_data)
@@ -27,11 +27,12 @@ class DataPull
 		if date.wday == 0 or date.wday == 6
 			data = "No trucks today. It's the weekend, go outside."
 		else
-			data = fb_data.to_html.split("<p>").select { | data | data.include?(date.strftime("%m/%d")) }[0]
+			data = fb_data.split("<p>").select { | data | data.include?(date.strftime("%m/%d")) }[0]
 			data = "Too lazy to get the info but it's really not that hard: https://lmgtfy.com/?q=Truck+Stop+SF." if data == nil
 
 			data.gsub!("</p>","")
 			data.gsub!("<br> ","\n")
+			data.gsub!("<br /> ","\n")
 			data.gsub!("\n ","\n")
 			data.gsub!(/[()]/, '(' => '', ')' => '')
 			data.strip!
