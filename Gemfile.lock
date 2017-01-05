@@ -4,7 +4,7 @@ GEM
     json (2.0.2)
     mini_portile2 (2.1.0)
     netrc (0.7.9)
-    nokogiri (1.6.8.1)
+    nokogiri (1.7.0.1)
       mini_portile2 (~> 2.1.0)
     oauth (0.5.1)
     rest_client (1.8.3)
@@ -19,8 +19,5 @@ DEPENDENCIES
   oauth
   rest_client
 
-RUBY VERSION
-   ruby 2.0.0p648
-
 BUNDLED WITH
-   1.13.2
+   1.13.7
