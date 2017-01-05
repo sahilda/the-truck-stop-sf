@@ -1,0 +1,26 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    json (2.0.2)
+    mini_portile2 (2.1.0)
+    netrc (0.7.9)
+    nokogiri (1.7.0.1)
+      mini_portile2 (~> 2.1.0)
+    oauth (0.5.1)
+    rest_client (1.8.3)
+      netrc (~> 0.7.7)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  json
+  nokogiri
+  oauth
+  rest_client
+
+RUBY VERSION
+   ruby 2.3.1p112
+
+BUNDLED WITH
+   1.13.7
