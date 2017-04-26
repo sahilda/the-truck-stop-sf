@@ -20,11 +20,10 @@ def build_chat_response
 	return response.to_json
 end
 
-def build_server_response(client_data)
-	client_data_hash = JSON.parse(client_data)
-	room_id = client_data_hash["item"]["room"]["id"]
+def build_server_response()
 	auth_token = "AklPfnySQeJNHZ2ATlUWJBT8wG2aJrIn3qzvVVPG"
 	client_uri = "https://xoom-eng.hipchat.com"
+	room_id = "2300042"
 	client_post = "/v2/room/#{room_id}/notification?auth_token=#{auth_token}"
 
 	server_response = {}
@@ -35,8 +34,8 @@ def build_server_response(client_data)
 	return server_response
 end
 
-def post_message_to_hipchat(client_data)
-	server_response = build_server_response(client_data)
+def post_message_to_hipchat()
+	server_response = build_server_response()
 	uri = URI.parse(server_response["uri"])
 	http = Net::HTTP.new(uri.host, uri.port)
 	http.use_ssl = true
@@ -58,11 +57,10 @@ loop do
 
   		STDERR.puts headers
 
-		client_data = client.read(headers["Content-Length"].to_i)
-
-		post_message_to_hipchat(client_data)
-	rescue
+		post_message_to_hipchat()
+	rescue => error
 		STDERR.puts "Not a valid request."
+		STDERR.puts error.backtrace
 	end
 	client.close
 end
