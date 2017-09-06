@@ -48,7 +48,7 @@ class DataPull
 				data[idx] = "Today's (#{date}) Trucks are:"
 			else
 				if @menu.key?(val.downcase)
-					data[idx] = "#{val} - #{@menu[val.downcase]}"
+					data[idx] = "* #{val} - #{@menu[val.downcase]}"
 				end
 			end
 		end
