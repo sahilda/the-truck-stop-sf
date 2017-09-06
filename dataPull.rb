@@ -5,6 +5,7 @@ class DataPull
 	def initialize
 		@feed = FacebookConnector.new.get_feed("TruckStopSF")
 		make_days
+		make_menu
 	end
 
 	def parse_feed
@@ -39,13 +40,43 @@ class DataPull
 		return data
 	end
 
+	def enhance_data(data)
+		data = data.split("\n")
+		data.each_with_index do | val, idx |
+			if idx == 0
+				date = val[/\d+\/\d+/]
+				data[idx] = "Today's (#{date}) Trucks are:"
+			else
+				if @menu.key?(val.downcase)
+					data[idx] = "#{val} - #{@menu[val.downcase]}"
+				end
+			end
+		end
+		return data.join("\n")
+	end
+
+
 	def make_days
 		@days = {1=>"MONDAY", 2=>"TUESDAY", 3=>"WEDNESDAY", 4=>"THURSDAY", 5=>"FRIDAY"}
 	end
 
+	def make_menu
+		@menu = {
+			"whisk on wheels" => "http://www.sfwhisk.com/menu/",
+			"the chairman" => "http://www.hailthechairman.com/sf-menu",
+			"koja kitchen" => "http://www.kojakitchen.com/menu",
+			"bonito poke" => "http://www.bonitopoke.com/menu.html",
+			"hiyaaa" => "https://www.hiyaaa.net/menu",
+			"curry up now" => "http://www.curryupnow.com/truck-menu/",
+			"spork & stix" => "https://www.sporkandstix.com/menus",
+			"drums and crumbs" => "http://drumsandcrumbs.com/drums-and-crumbs-menus/retail"
+		}
+	end
+
 	def get_trucks
 		parse_feed
-		return parse_post
+		data = parse_post
+		enhance_data(data)
 	end
 
 end
