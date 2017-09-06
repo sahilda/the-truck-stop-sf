@@ -1,26 +1,27 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    json (2.0.2)
-    mini_portile2 (2.1.0)
-    netrc (0.7.9)
-    nokogiri (1.7.0.1)
-      mini_portile2 (~> 2.1.0)
-    oauth (0.5.1)
-    rest_client (1.8.3)
-      netrc (~> 0.7.7)
+    addressable (2.5.2)
+      public_suffix (>= 2.0.2, < 4.0)
+    faraday (0.13.1)
+      multipart-post (>= 1.2, < 3)
+    json (2.1.0)
+    koala (3.0.0)
+      addressable
+      faraday
+      json (>= 1.8)
+    multipart-post (2.0.0)
+    public_suffix (3.0.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   json
-  nokogiri
-  oauth
-  rest_client
+  koala
 
 RUBY VERSION
-   ruby 2.3.1p112
+   ruby 2.4.1p111
 
 BUNDLED WITH
-   1.13.7
+   1.15.4

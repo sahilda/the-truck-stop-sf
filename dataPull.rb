@@ -1,38 +1,30 @@
-require 'nokogiri'
-require 'rest_client'
-require 'json'
-require_relative 'twitterConnector'
+require './facebookConnector.rb'
 
 class DataPull
+	
 	def initialize
-		@response = TwitterConnector.new("TruckStopSF").get_response
+		@feed = FacebookConnector.new.get_feed("TruckStopSF")
 	end
 
-	def get_twitter_data
-		return JSON.parse(@response.body)
+	def parse_feed
+		@feed.each do | post |
+			if post["message"].include? "TRUCKSTOP SF"
+				@post = post["message"]
+				break
+			end
+		end
 	end
 
-	def get_fb_html(twitter_data)
-		facebook_url = twitter_data[0]["entities"]["urls"][0]["expanded_url"]
-		return Nokogiri::HTML(RestClient.get(facebook_url))
-	end
-
-	def get_fb_data(fb_html)
-		return fb_html.css('code').children[0].to_xhtml.match(/<p>.*<\/p>/).to_s
-	end
-
-	def parse_fb_data(fb_data)
+	def parse_post
 		date = Time.now.getlocal('-08:00')
 
 		if date.wday == 0 or date.wday == 6
 			data = "No trucks today. It's the weekend, go outside."
 		else
-			data = fb_data.split("<p>").select { | data | data.include?(date.strftime("%m/%d")) }[0]
+			data = @post
 			data = "Too lazy to get the info but it's really not that hard: https://lmgtfy.com/?q=Truck+Stop+SF." if data == nil
 
-			data.gsub!("</p>","")
-			data.gsub!("<br> ","\n")
-			data.gsub!("<br /> ","\n")
+			data = data.slice(data.index("MONDAY")..-1)
 			data.gsub!("\n ","\n")
 			data.gsub!(/[()]/, '(' => '', ')' => '')
 			data.strip!
@@ -41,16 +33,9 @@ class DataPull
 		return data
 	end
 
-	def get_truck
-		if @response.code == '200' then
-			twitter_data = get_twitter_data
-			fb_html = get_fb_html(twitter_data)
-			fb_data = get_fb_data(fb_html)
-			data = parse_fb_data(fb_data)
-		else
-			data = "ERROR: failed getting twitter data, response code: #{@response.code}."
-		end
-
-		return data
+	def get_trucks
+		parse_feed
+		return parse_post
 	end
+
 end

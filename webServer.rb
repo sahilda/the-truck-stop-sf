@@ -9,7 +9,7 @@ server = TCPServer.new port
 
 def build_chat_response
 	dataPull = DataPull.new
-	message = dataPull.get_truck
+	message = dataPull.get_trucks
 
 	response = {}
 	response["color"] = "green"
