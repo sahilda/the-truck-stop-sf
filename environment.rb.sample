@@ -1,7 +1,5 @@
 # environment.rb.sample
 # Copy this file to environment.rb and change the name and password to your credentials
-# These are your twitter api credentials
-ENV['consumer_key1'] = 'a'
-ENV['consumer_key2'] = 'b'
-ENV['access_token1'] = 'c'
-ENV['access_token2'] = 'd'
+# These are your facebook app api credentials
+ENV['app_id'] = 'a'
+ENV['app_secret'] = 'b'
