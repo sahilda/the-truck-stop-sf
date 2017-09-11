@@ -69,7 +69,15 @@ class DataPull
 			"hiyaaa" => "https://www.hiyaaa.net/menu",
 			"curry up now" => "http://www.curryupnow.com/truck-menu/",
 			"spork & stix" => "https://www.sporkandstix.com/menus",
-			"drums and crumbs" => "http://drumsandcrumbs.com/drums-and-crumbs-menus/retail"
+			"drums and crumbs" => "http://drumsandcrumbs.com/drums-and-crumbs-menus/retail",
+			"steamin' butger" => "http://www.thesteaminburger.com/menu.html",
+			"steamin' burger" => "http://www.thesteaminburger.com/menu.html",
+			"don pablo truck" => "http://www.donpablotrucksf.com/#menu",
+			"phat thai" => "http://phatthaisf.com/menu.html",
+			"an the go" => "https://twitter.com/anthegosf",
+			"seoulful korean fried chicken" => "https://www.seoulfulfc.com/menu",
+			"ebbett's good to go" => "https://ebbettsgoodtogo.com/",
+			"mobowl" => "http://www.eatmobowl.com/menu.html",			
 		}
 	end
 

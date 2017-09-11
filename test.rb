@@ -1,4 +1,5 @@
 require './datapull.rb'
 
-d = DataPull.new.get_trucks
-p d
+d = DataPull.new
+d.parse_feed
+p d.parse_post
