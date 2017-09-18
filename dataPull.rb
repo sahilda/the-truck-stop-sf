@@ -12,9 +12,9 @@ class DataPull
 		@feed.each do | post |
 			if post["message"].include? "TRUCKSTOP SF"
 				@post = post["message"]
-				break
+				return @post
 			end
-		end
+		end		
 	end
 
 	def parse_post
@@ -77,7 +77,8 @@ class DataPull
 			"an the go" => "https://twitter.com/anthegosf",
 			"seoulful korean fried chicken" => "https://www.seoulfulfc.com/menu",
 			"ebbett's good to go" => "https://ebbettsgoodtogo.com/",
-			"mobowl" => "http://www.eatmobowl.com/menu.html",			
+			"mobowl" => "http://www.eatmobowl.com/menu.html",
+			"senor sisig" => "http://www.senorsisig.com/#menu",
 		}
 	end
 
