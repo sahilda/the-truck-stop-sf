@@ -79,6 +79,7 @@ class DataPull
 			"ebbett's good to go" => "https://ebbettsgoodtogo.com/",
 			"mobowl" => "http://www.eatmobowl.com/menu.html",
 			"senor sisig" => "http://www.senorsisig.com/#menu",
+			"mayo and mustard" => "http://www.mayomustard.com/menu"
 		}
 	end
 
