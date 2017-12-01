@@ -23,18 +23,19 @@ class DataPull
 		if date.wday == 0 or date.wday == 6
 			data = "No trucks today. It's the weekend, go outside."
 		else
-			data = @post
-			if data == nil
-				return "Too lazy to get the info but it's really not that hard: https://lmgtfy.com/?q=Truck+Stop+SF." 
+			data = @post		
+			begin
+				if date.wday == 5 
+					data = data.slice(data.index(@days[date.wday])..-1)
+				else
+					data = data.slice(data.index(@days[date.wday])...data.index(@days[date.wday+1]))
+				end
+				data.gsub!("\n ","\n")
+				data.gsub!(/[()]/, '(' => '', ')' => '')
+				data.strip!
+			rescue				
+				return "Too lazy to find out, look here yourself (honestly though, it's probably the case that *they* actually have been too lazy to update their menu online): https://www.facebook.com/TruckStopSF/ or https://lmgtfy.com/?q=Truck+Stop+SF." 
 			end
-			if date.wday == 5 
-				data = data.slice(data.index(@days[date.wday])..-1)
-			else
-				data = data.slice(data.index(@days[date.wday])...data.index(@days[date.wday+1]))
-			end
-			data.gsub!("\n ","\n")
-			data.gsub!(/[()]/, '(' => '', ')' => '')
-			data.strip!
 		end
 
 		return data
@@ -86,6 +87,9 @@ class DataPull
 	def get_trucks
 		parse_feed
 		data = parse_post
+		if (data == "Too lazy to find out, look here yourself (honestly though, it's probably the case that *they* actually have been too lazy to update their menu online): https://www.facebook.com/TruckStopSF/ or https://lmgtfy.com/?q=Truck+Stop+SF.")
+			return data
+		end
 		enhance_data(data)
 	end
 
