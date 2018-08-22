@@ -13,3 +13,6 @@ A simple app that responds to Slack commands with today's menu for the Truck Sto
 #### Run the app by:
 1. Setting up environment.rb - look at environment.rb.sample for an example.
 2. Running the following: ```nohup ruby lib/webServer.rb &> /dev/null &```
+
+## Credits:
+* [Icon](https://www.flaticon.com/free-icon/food-truck_1046762#term=food%20truck&page=1&position=8) made by [Freepik](http://www.freepik.com) from www.flaticon.com is licensed by CC 3.0 BY
