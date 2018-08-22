@@ -54,6 +54,7 @@ class DataPull
         end
       end
     end
+    data[data.size] = "Location: https://goo.gl/maps/HJjYoF1yDnp"
     return data.join("\n")
   end
 
