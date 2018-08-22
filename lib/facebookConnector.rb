@@ -1,5 +1,5 @@
 require 'koala'
-require './environment.rb'
+require_relative './environment.rb'
 
 class FacebookConnector
 

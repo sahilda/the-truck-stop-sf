@@ -1,4 +1,4 @@
-require './facebookConnector.rb'
+require_relative './facebookConnector.rb'
 
 class DataPull
 	

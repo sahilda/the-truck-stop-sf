@@ -11,7 +11,17 @@ GEM
       faraday
       json (>= 1.8)
     multipart-post (2.0.0)
+    mustermann (1.0.3)
     public_suffix (3.0.0)
+    rack (2.0.5)
+    rack-protection (2.0.3)
+      rack
+    sinatra (2.0.3)
+      mustermann (~> 1.0)
+      rack (~> 2.0)
+      rack-protection (= 2.0.3)
+      tilt (~> 2.0)
+    tilt (2.0.8)
 
 PLATFORMS
   ruby
@@ -19,9 +29,10 @@ PLATFORMS
 DEPENDENCIES
   json
   koala
+  sinatra
 
 RUBY VERSION
-   ruby 2.4.1p111
+   ruby 2.5.1p57
 
 BUNDLED WITH
-   1.15.4
+   1.16.2

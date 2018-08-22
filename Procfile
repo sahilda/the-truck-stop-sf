@@ -1,1 +1,1 @@
-web: bundle exec ruby webServer.rb
+web: bundle exec ruby lib/webServer.rb
