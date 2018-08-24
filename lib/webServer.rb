@@ -11,8 +11,13 @@ end
 post '/slack/trucks' do
   status 200
   p params
-  if params['command'] == "/trucks"
+  command = params['command']
+  text = params['text']
+  if command == '/truck-stop'
     content_type 'application/json'
-    body SlackResponse.build_response
+    body SlackResponse.build_response(:truck_stop, text)
+  elsif command == '/parklab'
+    content_type 'application/json'
+    body SlackResponse.build_response(:parklab, text)
   end
 end

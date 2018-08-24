@@ -1,11 +1,11 @@
-require_relative './dataPull.rb'
+require_relative './truckStopDataPull.rb'
 require 'json'
 
 class HitchatResponse
   def self.build_response
     response = {}        
     response['color'] = 'green'
-    response['message'] = DataPull.new.get_trucks
+    response['message'] = TruckStopDataPull.new.get_trucks
     response['notify'] = 'false'
     response['message_format'] = 'text'        
     response.to_json        
