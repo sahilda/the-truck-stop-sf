@@ -30,7 +30,7 @@ class ParklabDataPull < DataPull
   end
 
   def enhance_data
-    result = [@date.strftime("%m/%d")]
+    result = ["Today's (#{@date.strftime("%m/%d")}) trucks are:"]
     @trucks.each_with_index do | val, idx |
       if @menu.key?(val.downcase.strip)
         result << "* #{val.strip} - #{@menu[val.downcase.strip]}"
@@ -38,7 +38,7 @@ class ParklabDataPull < DataPull
         result << "* #{val.strip}"
       end
     end
-    return result.join("\n")
+    result.join("\n")
   end
 
   def get_trucks

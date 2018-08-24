@@ -52,8 +52,8 @@ class TruckStopDataPull < DataPull
           data[idx] = "* #{val.strip} - #{@menu[val.downcase.strip]}"
         end
       end
-    end    
-    return data.join("\n")
+    end
+    data.join("\n")
   end
 
   def get_trucks

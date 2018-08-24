@@ -4,6 +4,7 @@ A simple app that responds to Slack commands with today's menu for the Truck Sto
 
 #### TODOs:
 * Extend it to work on all Slack rooms
+* Change the 'location' sub command to return an image
 * Make it work with HipChat
 * Modify the message to add line breaks between trucks **(done)**
 * Modify the script to check current SF time instead of system time **(set to PST, so no daylight savings is taken into account, but good enough)**
