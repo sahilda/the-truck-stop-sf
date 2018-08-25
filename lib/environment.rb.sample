@@ -1,5 +1,5 @@
 # environment.rb.sample
 # Copy this file to environment.rb and change the name and password to your credentials
 # These are your facebook app api credentials
-ENV['app_id'] = 'a'
-ENV['app_secret'] = 'b'
+ENV['fb_app_id'] = 'a'
+ENV['fb_app_secret'] = 'b'

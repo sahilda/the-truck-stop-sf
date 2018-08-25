@@ -12,9 +12,9 @@ class HitchatResponse
   end
 
   def build_server_response()
-    auth_token = 'AklPfnySQeJNHZ2ATlUWJBT8wG2aJrIn3qzvVVPG'
-    client_uri = 'https://xoom-eng.hipchat.com'
-    room_id = '2300042'
+    auth_token = ''
+    client_uri = ''
+    room_id = ''
     client_post = "/v2/room/#{room_id}/notification?auth_token=#{auth_token}"
   
     server_response = {}

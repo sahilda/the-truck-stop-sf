@@ -1,5 +1,4 @@
 require 'koala'
-require_relative './environment.rb'
 
 class FacebookConnector
   def initialize
@@ -8,7 +7,7 @@ class FacebookConnector
   end
 
   def get_token
-    oauth = Koala::Facebook::OAuth.new(ENV['app_id'], ENV['app_secret'], 'http://sahilda.com')
+    oauth = Koala::Facebook::OAuth.new(ENV['fb_app_id'], ENV['fb_app_secret'], 'http://sahilda.com')
     @token = oauth.get_app_access_token
   end
 
