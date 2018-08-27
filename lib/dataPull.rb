@@ -4,16 +4,16 @@ require_relative './facebookConnector.rb'
 
 class DataPull
   def initialize
-    make_days
-    make_menu
+    @@days ||= make_days
+    @@menu ||= make_menu
   end
 
-  def make_days
-    @days = { 1 => 'MONDAY', 2 => 'TUESDAY', 3 => 'WEDNESDAY', 4 => 'THURSDAY', 5 => 'FRIDAY' }
+  def make_days    
+    { 1 => 'MONDAY', 2 => 'TUESDAY', 3 => 'WEDNESDAY', 4 => 'THURSDAY', 5 => 'FRIDAY' }
   end
 
   def make_menu
-    @menu = {
+    menu = {
       'whisk on wheels' => 'http://www.sfwhisk.com/menu/',
       'the chairman' => 'http://www.hailthechairman.com/sf-menu',
       'koja kitchen' => 'http://www.kojakitchen.com/menu',
@@ -44,5 +44,6 @@ class DataPull
       'liberty cheesesteak' => 'http://www.lcfoodtruck.com/',
       'lamas peruvian food' => 'https://www.lamasperuvianfood.com/menu',
     }
+    menu.to_a.map { |pair| [pair.first.downcase, pair.last] }.to_h
   end
 end

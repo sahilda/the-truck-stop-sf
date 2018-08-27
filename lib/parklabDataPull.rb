@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'date'
 require_relative './dataPull.rb'
 
@@ -25,15 +26,15 @@ class ParklabDataPull < DataPull
         @trucks = @post.scan(/Lunch.*/)[0][6..-1].split(",").map { |truck| truck.sub(/and/,'').strip }        
       end
     rescue
-      return "Too lazy to find out, look here yourself (honestly though, it's probably the case that *they* actually have been too lazy to update their menu online): https://www.facebook.com/TruckStopSF/ or https://lmgtfy.com/?q=Truck+Stop+SF." 
+      return "Too lazy to find out, look here yourself (honestly though, it's probably the case that *they* actually have been too lazy to update their menu online): http://parklabjunction.com/ or https://lmgtfy.com/?q=parklab+junction."
     end
   end
 
   def enhance_data
     result = ["Today's (#{@date.strftime("%m/%d")}) trucks are:"]
     @trucks.each_with_index do | val, idx |
-      if @menu.key?(val.downcase.strip)
-        result << "* #{val.strip} - #{@menu[val.downcase.strip]}"
+      if @@menu.key?(val.downcase.strip)
+        result << "* #{val.strip} - #{@@menu[val.downcase.strip]}"
       else
         result << "* #{val.strip}"
       end
@@ -44,10 +45,9 @@ class ParklabDataPull < DataPull
   def get_trucks
     parse_feed
     data = parse_post
-    if data == 'Too lazy to find out, look here yourself (honestly though, it\'s probably the case that *they* actually have been too lazy to update their menu online): https://www.facebook.com/TruckStopSF/ or https://lmgtfy.com/?q=Truck+Stop+SF.'
+    if data == 'Too lazy to find out, look here yourself (honestly though, it\'s probably the case that *they* actually have been too lazy to update their menu online): http://parklabjunction.com/ or https://lmgtfy.com/?q=parklab+junction.'
       return data
     end
     enhance_data
   end
-
 end

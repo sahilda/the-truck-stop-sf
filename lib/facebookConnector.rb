@@ -1,4 +1,9 @@
 require 'koala'
+begin
+  require_relative './environment.rb'
+rescue LoadError
+  p 'Using environment variables'
+end
 
 class FacebookConnector
   def initialize

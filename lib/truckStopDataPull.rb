@@ -26,9 +26,9 @@ class TruckStopDataPull < DataPull
       data = @post
       begin
         if @date.friday?
-          data = data.slice(data.index(@days[@date.wday])..-1)
+          data = data.slice(data.index(@@days[@date.wday])..-1)
         else
-          data = data.slice(data.index(@days[@date.wday])...data.index(@days[@date.wday+1]))
+          data = data.slice(data.index(@@days[@date.wday])...data.index(@@days[@date.wday+1]))
         end
         data.gsub!("\n ","\n")
         data.gsub!(/[()]/, '(' => '', ')' => '')
@@ -43,14 +43,11 @@ class TruckStopDataPull < DataPull
 
   def enhance_data(data)
     data = data.split("\n")
-    data.each_with_index do | val, idx |
-      if idx == 0
-        date = val[/\d+\/\d+/]
+    data.each_with_index do |val, idx|
+      if idx.zero?
         data[idx] = "Today's (#{@date.strftime("%m/%d")}) trucks are:"
-      else
-        if @menu.key?(val.downcase.strip)
-          data[idx] = "* #{val.strip} - #{@menu[val.downcase.strip]}"
-        end
+      elsif @@menu.key?(val.downcase.strip)
+        data[idx] = "* #{val.strip} - #{@@menu[val.downcase.strip]}"
       end
     end
     data.join("\n")
@@ -64,5 +61,4 @@ class TruckStopDataPull < DataPull
     end
     enhance_data(data)
   end
-
 end
