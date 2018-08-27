@@ -3,13 +3,13 @@
 require_relative './facebookConnector.rb'
 
 class DataPull
-  def initialize    
+  def initialize
     make_days
     make_menu
   end
 
   def make_days
-    @days = {1=>"MONDAY", 2=>"TUESDAY", 3=>"WEDNESDAY", 4=>"THURSDAY", 5=>"FRIDAY"}
+    @days = { 1 => 'MONDAY', 2 => 'TUESDAY', 3 => 'WEDNESDAY', 4 => 'THURSDAY', 5 => 'FRIDAY' }
   end
 
   def make_menu
@@ -39,6 +39,10 @@ class DataPull
       'street meet' => 'http://www.streetmeettruck.ca/menu/',
       'me so hungry sf' => 'http://mesohungrytruck.com/',
       'casablanca best food' => 'http://casablancamoroccanfood.com/foodtruck.html',
+      'roli roti gourmet rotisserie' => 'https://www.roliroti.com/food/',
+      'wokitchentruck' => 'https://wokitchentruck.com/index-2.html',
+      'liberty cheesesteak' => 'http://www.lcfoodtruck.com/',
+      'lamas peruvian food' => 'https://www.lamasperuvianfood.com/menu',
     }
   end
 end
