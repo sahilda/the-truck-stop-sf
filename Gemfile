@@ -6,3 +6,4 @@ gem 'pg'
 gem "json"
 gem "koala"
 gem "sinatra"
+gem 'newrelic_rpm'

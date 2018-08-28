@@ -12,6 +12,7 @@ GEM
       json (>= 1.8)
     multipart-post (2.0.0)
     mustermann (1.0.3)
+    newrelic_rpm (5.3.0.346)
     pg (1.1.1)
     public_suffix (3.0.0)
     rack (2.0.5)
@@ -30,6 +31,7 @@ PLATFORMS
 DEPENDENCIES
   json
   koala
+  newrelic_rpm
   pg
   sinatra
 

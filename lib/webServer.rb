@@ -3,9 +3,17 @@
 require 'sinatra'
 require_relative './slackAuth.rb'
 require_relative './slackResponse.rb'
+begin
+  require 'newrelic_rpm'
+rescue LoadError
+  p 'Not loading New Relic'
+end
+
+p "Starting version: #{ENV['VERSION']}"
 
 get '/' do
-  'SF Trucks is running!'
+  status 200
+  body 'SF Trucks is running!'
 end
 
 post '/slack/trucks' do
