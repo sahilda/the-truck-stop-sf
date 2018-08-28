@@ -8,7 +8,7 @@ class DataPull
     @@menu ||= make_menu
   end
 
-  def make_days    
+  def make_days
     { 1 => 'MONDAY', 2 => 'TUESDAY', 3 => 'WEDNESDAY', 4 => 'THURSDAY', 5 => 'FRIDAY' }
   end
 
@@ -43,6 +43,9 @@ class DataPull
       'wokitchentruck' => 'https://wokitchentruck.com/index-2.html',
       'liberty cheesesteak' => 'http://www.lcfoodtruck.com/',
       'lamas peruvian food' => 'https://www.lamasperuvianfood.com/menu',
+      'Kabob Trolley' => 'http://www.kabobtrolley.com/halal-food-in-san-francisco.html',
+      'Señor Sisig' => 'http://www.senorsisig.com/#menu',
+      'Lady Saigon' => 'https://www.yelp.com/biz/lady-saigon-san-francisco',
     }
     menu.to_a.map { |pair| [pair.first.downcase, pair.last] }.to_h
   end

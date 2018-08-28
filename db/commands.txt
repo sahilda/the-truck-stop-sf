@@ -1,0 +1,5 @@
+# for setup with Postgres
+
+psql -h localhost truckstop -U admin;
+DROP USER admin;
+DROP TABLE slack_clients;

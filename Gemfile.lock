@@ -12,6 +12,7 @@ GEM
       json (>= 1.8)
     multipart-post (2.0.0)
     mustermann (1.0.3)
+    pg (1.1.1)
     public_suffix (3.0.0)
     rack (2.0.5)
     rack-protection (2.0.3)
@@ -29,6 +30,7 @@ PLATFORMS
 DEPENDENCIES
   json
   koala
+  pg
   sinatra
 
 RUBY VERSION

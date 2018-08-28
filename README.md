@@ -2,6 +2,8 @@
 
 A simple app that responds to Slack commands with today's menu for the Truck Stop SF http://www.truckstopsf.com/. 
 
+<a href="https://slack.com/oauth/authorize?scope=commands&client_id=207679880451.420459731748"><img alt="Add to Slack" height="40" width="139" src="https://platform.slack-edge.com/img/add_to_slack.png" srcset="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" /></a>
+
 #### TODOs:
 * Extend it to work on all Slack rooms
 * Change the 'location' sub command to return an image
