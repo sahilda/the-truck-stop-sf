@@ -18,6 +18,8 @@ class SlackResponse
       else
         response['text'] = ParklabDataPull.new.get_trucks
       end
+    elsif type == :help
+      response['text'] = 'Feel free to email the developer at sahildagarwal@gmail.com or see more here: https://github.com/sahilda/the-truck-stop-sf.'
     end
     response.to_json
   end
