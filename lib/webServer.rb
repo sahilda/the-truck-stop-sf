@@ -19,7 +19,7 @@ post '/slack/trucks' do
   elsif command == '/parklab'
     content_type 'application/json'
     body SlackResponse.build_response(:parklab, text)
-  elsif command == '/help'
+  elsif command == '/trucks-help'
     content_type 'application/json'
     body SlackResponse.build_response(:help, text)
   end
