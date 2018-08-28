@@ -33,3 +33,6 @@ curl -XPOST localhost:4567/slack/trucks -d "command=/parklab"
 
 ## Credits:
 * [Icon](https://www.flaticon.com/free-icon/food-truck_1046762#term=food%20truck&page=1&position=8) made by [Freepik](http://www.freepik.com) from www.flaticon.com is licensed by CC 3.0 BY
+
+## Contact / Help:
+* For any help or questions, please email me at sahildagarwal@gmail.com.

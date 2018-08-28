@@ -36,5 +36,10 @@ end
 get '/slack/auth' do
   status 200
   p params
-  SlackAuth.get_access_token(params['code']) unless params['error'] == 'access_denied'
+  success = SlackAuth.get_access_token(params['code']) unless params['error'] == 'access_denied'
+  if success
+    body "SF Trucks installed successfully! Continue on to Slack!"
+  else
+    body "Error installing SF Trucks. Please reach out for help at sahildagarwal@gmail.com."
+  end
 end
