@@ -5,16 +5,20 @@ A simple app that responds to Slack commands with today's menu for the Truck Sto
 ## USAGE:
 
 ### Slack:
-
 <a href="https://slack.com/oauth/authorize?scope=commands&client_id=207679880451.420459731748"><img alt="Add to Slack" height="40" width="139" src="https://platform.slack-edge.com/img/add_to_slack.png" srcset="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" /></a>
+
+Or in the [Slack store](http://www.slack.com/apps/ACCDHMHN0-sf-food-trucks).
 
 There are three different commands:
 * /trucks-help - get help
 * /parklab - get today's Parklab menu
 * /truck-stop - get SF Truck Stop's menu
 
+### Demo:
+https://www.useloom.com/share/39e3f42a49fa456c831d849ae8c8d2eb
+
 ## TODOs:
-* Extend it to work on all Slack rooms
+* Extend it to work on all Slack rooms **(done)**
 * Change the 'location' sub command to return an image
 * Make it work with HipChat
 * Modify the message to add line breaks between trucks **(done)**

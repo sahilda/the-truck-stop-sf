@@ -46,6 +46,9 @@ class DataPull
       'Kabob Trolley' => 'http://www.kabobtrolley.com/halal-food-in-san-francisco.html',
       'Señor Sisig' => 'http://www.senorsisig.com/#menu',
       'Lady Saigon' => 'https://www.yelp.com/biz/lady-saigon-san-francisco',
+      'The Steamin\' Burger' => 'http://www.thesteaminburger.com/menu.html',
+      'Little Red Riding Truck' => 'https://www.littleredridingtrucksf.com/truck-menu',
+      'Me So Hungry Too' => 'http://mesohungrytruck.com/',
     }
     menu.to_a.map { |pair| [pair.first.downcase, pair.last] }.to_h
   end
