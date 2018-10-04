@@ -69,6 +69,8 @@ class DataPull
       'Jeepsilog Food Truck' => 'http://www.jeepsilog.com/menu/',
       'Street Meet Truck' => 'http://www.streetmeettruck.ca/menu/',
       'Happy Dumplings' => 'http://www.happydumplings.com/',
+      'Izzy’s Cheesesteaks' => 'http://www.izzyscheesesteaks.com/menu.html',
+      'Let\'s Be Frank Dogs' => 'http://letsbefrankdogs.com/dog/menu/',
     }
     menu.to_a.map { |pair| [pair.first.downcase, pair.last] }.to_h
   end
