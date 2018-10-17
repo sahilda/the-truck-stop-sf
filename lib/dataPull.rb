@@ -71,6 +71,8 @@ class DataPull
       'Happy Dumplings' => 'http://www.happydumplings.com/',
       'Izzy’s Cheesesteaks' => 'http://www.izzyscheesesteaks.com/menu.html',
       'Let\'s Be Frank Dogs' => 'http://letsbefrankdogs.com/dog/menu/',
+      'Limon Rotisserie Truck' => 'https://www.limonrotisserie.com/foodtruck',
+      'Whisk on Wheels tentative' => 'http://www.sfwhisk.com/menu/',
     }
     menu.to_a.map { |pair| [pair.first.downcase, pair.last] }.to_h
   end
