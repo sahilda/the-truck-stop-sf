@@ -48,6 +48,8 @@ class TruckStopDataPull < DataPull
         data[idx] = "Today's (#{@date.strftime("%m/%d")}) trucks are:"
       elsif @@menu.key?(val.downcase.strip)
         data[idx] = "* #{val.strip} - #{@@menu[val.downcase.strip]}"
+      else
+        data[idx] << "* #{val.strip}"
       end
     end
     data.join("\n")

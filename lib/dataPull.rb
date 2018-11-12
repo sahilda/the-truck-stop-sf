@@ -74,6 +74,7 @@ class DataPull
       'Limon Rotisserie Truck' => 'https://www.limonrotisserie.com/foodtruck',
       'Whisk on Wheels tentative' => 'http://www.sfwhisk.com/menu/',
       'Limon Rotisserie' => 'https://www.limonrotisserie.com/foodtruck',
+      'SeoulOfTaipei' => 'https://seouloftaipei.com/menu/',
     }
     menu.to_a.map { |pair| [pair.first.downcase, pair.last] }.to_h
   end
